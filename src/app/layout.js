@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           >
             <Navbar />
 
-            <main style={{ flex: 1 }}>
+            <main style={{ flex: 1, backgroundColor: "background.default", }}>
               {children}
             </main>
 

@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const router =useRouter();
+  const router = useRouter();
 
   return (
     <>
@@ -29,7 +29,6 @@ const Navbar = () => {
         position="sticky"
         elevation={0}
         sx={{
-          bgcolor: "background.default",
           borderBottom: "1px solid",
           borderColor: "divider",
           backdropFilter: "blur(8px)",
@@ -56,10 +55,10 @@ const Navbar = () => {
                 fontWeight: "bold",
                 color: "primary.contrastText",
                 fontSize: "16px",
-                cursor:"pointer"
+                cursor: "pointer"
               }}
-              onClick={()=>router.push("/")}
-              
+              onClick={() => router.push("/")}
+
             >
               S&S
             </Box>
