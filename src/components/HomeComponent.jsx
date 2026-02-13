@@ -12,6 +12,9 @@ import {
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Image from "next/image";
 import Link from "next/link";
+import HomeCard from "@/components/HomeCard";
+import { homeCardData } from "@/constants/homeCardData";
+
 
 const HomeComponent = () => {
     return (
@@ -24,7 +27,7 @@ const HomeComponent = () => {
                 py: { xs: 6, md: 10 },
             }}
         >
-            <Container maxWidth="lg">
+            <Container maxWidth="false">
                 <Box
                     sx={{
                         display: "grid",
@@ -130,15 +133,19 @@ const HomeComponent = () => {
                             position: "relative",
                             borderRadius: "22px",
                             overflow: "hidden",
-                            boxShadow: "0px 15px 40px rgba(0,0,0,0.55)",
+                            // boxShadow: "0px 15px 40px rgba(0,0,0,0.55)",
                             border: "1px solid rgba(255,255,255,0.08)",
+                            aspectRatio: "1",
+                            width: "100%",
+                            maxWidth: 500,
                         }}
                     >
                         <Image
                             src="/supermarketnew.jpg"
-                            width={500}
-                            height={500}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 500px"
                             alt="Picture of the supermarket"
+                            style={{ objectFit: "cover" }}
                         />
 
                         {/* BADGE CARD */}
@@ -195,6 +202,36 @@ const HomeComponent = () => {
                         </Paper>
                     </Box>
                 </Box>
+
+                {/* HOME FEATURE CARDS */}
+                <Box
+                    sx={{
+                        mt: { xs: 6, md: 10 },
+                        display: "flex",
+                        gap: 3,
+                        justifyContent: "space-between",
+                        flexWrap: "nowrap",
+                        overflowX: "auto",
+                        pt: 2,
+                        pb: 2,
+                        "&::-webkit-scrollbar": { display: "auto" },
+                    }}
+                >
+                    {homeCardData.map((item, index) => (
+                        <Box key={index} sx={{ minWidth: 280 }}>
+                            <HomeCard
+                                icon={React.cloneElement(item.icon, {
+                                    sx: { color: "primary.main", fontSize: 30 },
+                                })}
+                                title={item.title}
+                                description={item.description}
+                            />
+                        </Box>
+                    ))}
+                </Box>
+
+
+
             </Container>
         </Box>
     );
