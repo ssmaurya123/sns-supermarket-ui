@@ -1,11 +1,11 @@
 "use client";
-
-import Button from "@mui/material/Button";
+import HomeComponent from "@/components/HomeComponent";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
-    <div style={{ padding: 20 }}>
-      <Button variant="contained">Take me back</Button>
-    </div>
+    <Box >
+      <HomeComponent/>
+    </Box>
   );
 }
