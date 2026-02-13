@@ -36,7 +36,7 @@ export default function Footer() {
             <Container maxWidth={false} sx={{ px: { xs: 2, md: 4 } }}>
                 <Grid container spacing={{ xs: 4, md: 12 }}>
                     {/* LEFT: Logo + About */}
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Stack spacing={2}>
                             <Stack direction="row" spacing={1.2} alignItems="center">
                                 <Box
@@ -104,7 +104,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Quick Links */}
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
                             Quick Links
                         </Typography>
@@ -126,7 +126,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Contact Info */}
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
                             Contact Info
                         </Typography>
@@ -156,7 +156,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Store Hours */}
-                    <Grid item xs={12} md={3}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
                             Store Hours
                         </Typography>
