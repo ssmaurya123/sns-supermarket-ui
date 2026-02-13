@@ -17,9 +17,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { navLinks } from "@/constants/navbar";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const router =useRouter();
 
   return (
     <>
@@ -54,7 +56,10 @@ const Navbar = () => {
                 fontWeight: "bold",
                 color: "primary.contrastText",
                 fontSize: "16px",
+                cursor:"pointer"
               }}
+              onClick={()=>router.push("/")}
+              
             >
               S&S
             </Box>
