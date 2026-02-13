@@ -81,6 +81,7 @@ export default function Footer() {
                                 </IconButton>
 
                                 <IconButton
+                                onClick={()=>window.open("https://instagram.com/saurabh_chaudhary1319", "_blank")}
                                     sx={{
                                         bgcolor: "rgba(255,255,255,0.06)",
                                         "&:hover": { bgcolor: "rgba(255,255,255,0.12)" },
@@ -117,7 +118,7 @@ export default function Footer() {
                             <Link href="/departments" underline="none" color="text.secondary">
                                 Departments
                             </Link>
-                            <Link href="/why-choose-us" underline="none" color="text.secondary">
+                            <Link href="/whyChooseUs" underline="none" color="text.secondary">
                                 Why Choose Us
                             </Link>
                         </Stack>
