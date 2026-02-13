@@ -1,9 +1,14 @@
 "use client"
-import {Typography } from "@mui/material"
+import ContactComponent from "@/components/ContactComponent"
+import { Box } from "@mui/material"
 
 const ContactPage = () => {
     return (
-        <Typography>ContactPage</Typography>
+        <Box sx={{ marginLeft: "50px" }}>
+
+            <ContactComponent />
+
+        </Box>
     )
 
 }
