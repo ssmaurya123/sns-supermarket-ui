@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
     Box,
     Container,
     Grid,
     Typography,
-    Link,
+    Link as MuiLink,
     IconButton,
     Chip,
     Stack,
@@ -33,7 +34,7 @@ export default function Footer() {
             }}
         >
             <Container maxWidth={false} sx={{ px: { xs: 2, md: 4 } }}>
-            <Grid container spacing={{ xs: 4, md: 12 }}>
+                <Grid container spacing={{ xs: 4, md: 12 }}>
                     {/* LEFT: Logo + About */}
                     <Grid item xs={12} md={4}>
                         <Stack spacing={2}>
@@ -81,7 +82,7 @@ export default function Footer() {
                                 </IconButton>
 
                                 <IconButton
-                                onClick={()=>window.open("https://instagram.com/saurabh_chaudhary1319", "_blank")}
+                                    onClick={() => window.open("https://instagram.com/saurabh_chaudhary1319", "_blank")}
                                     sx={{
                                         bgcolor: "rgba(255,255,255,0.06)",
                                         "&:hover": { bgcolor: "rgba(255,255,255,0.12)" },
@@ -109,18 +110,18 @@ export default function Footer() {
                         </Typography>
 
                         <Stack spacing={1}>
-                            <Link href="/" underline="none" color="text.secondary">
+                            <MuiLink component={Link} href="/" underline="none" color="text.secondary" sx={{ "&:hover": { color: "primary.main" } }}>
                                 Home
-                            </Link>
-                            <Link href="/about" underline="none" color="text.secondary">
+                            </MuiLink>
+                            <MuiLink component={Link} href="/about" underline="none" color="text.secondary" sx={{ "&:hover": { color: "primary.main" } }}>
                                 About Us
-                            </Link>
-                            <Link href="/departments" underline="none" color="text.secondary">
+                            </MuiLink>
+                            <MuiLink component={Link} href="/departments" underline="none" color="text.secondary" sx={{ "&:hover": { color: "primary.main" } }}>
                                 Departments
-                            </Link>
-                            <Link href="/whyChooseUs" underline="none" color="text.secondary">
+                            </MuiLink>
+                            <MuiLink component={Link} href="/whyChooseUs" underline="none" color="text.secondary" sx={{ "&:hover": { color: "primary.main" } }}>
                                 Why Choose Us
-                            </Link>
+                            </MuiLink>
                         </Stack>
                     </Grid>
 
@@ -131,7 +132,7 @@ export default function Footer() {
                         </Typography>
 
                         <Stack spacing={1.5}>
-                            <Stack direction="row" spacing={1.2} alignItems="center">
+                            <Stack component={Link} href="/location" direction="row" spacing={1.2} alignItems="center" >
                                 <LocationOnIcon sx={{ color: "primary.main" }} />
                                 <Typography variant="body2" color="text.secondary">
                                     19600 Katy Fwy, Houston, TX 77094
