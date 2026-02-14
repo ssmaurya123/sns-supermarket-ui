@@ -12,14 +12,26 @@ const ContactPage = () => {
                 <Typography variant="body1" sx={{ color: "text.secondary", mb: 2 }}>Have questions or feedback? We'd love to hear from you.</Typography>
             </Box>
 
-            <Grid container spacing={2} justifyContent="center">
-                <Grid size={{ xs: 12, md: 6 }} sx={{ display: { xs: "flex", md: "block" }, justifyContent: { xs: "center", md: "initial" } }}>
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: { xs: "column", md: "row" },
+                    justifyContent: "center",
+                    alignItems: { xs: "stretch", md: "flex-start" },
+                    gap: { xs: 4, md: 24 },
+                    px: { xs: 2, md: 6 },
+                    py: { xs: 2, md: 4 },
+                }}
+            >
+                <Box sx={{ width: { xs: "100%", md: "20%" } }}>
                     <ContactComponent />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
+                </Box>
+
+                <Box sx={{ width: { xs: "100%", md: "900px" } }}>
                     <MessageForm />
-                </Grid>
-            </Grid>
+                </Box>
+            </Box>
+
 
         </Box>
     )
