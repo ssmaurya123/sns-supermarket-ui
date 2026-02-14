@@ -3,7 +3,7 @@ import React from 'react'
 
 const ContactCard = ({ icon, title, description }) => {
     return (
-        <Card sx={{ width: "300px", mb: 4, display: "flex", flexDirection: "row", alignItems: "stretch", p: 0 }}>
+        <Card sx={{ width: "300px", mb: 4, display: "flex", flexDirection: "row", alignItems: "stretch", p: 0, borderRadius: "12px" }}>
             <CardMedia
                 sx={{
                     width: 56,
