@@ -1,7 +1,26 @@
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import React from 'react'
+import { Card, CardContent, CardMedia, Tooltip, Typography } from '@mui/material';
+import React, { useState } from 'react'
 
 const ContactCard = ({ icon, title, description }) => {
+
+    const [copy, setCopy] = useState(false)
+
+    const handleCopy = async () => {
+
+        try {
+            await navigator.clipboard.writeText(description);
+            setCopy(true);
+            setTimeout(() => {
+                setCopy(false)
+            }, 1500);
+
+        } catch (err) {
+            console.log("Failed to copy: ", err);
+        }
+
+    }
+
+
     return (
         <Card sx={{ width: "300px", mb: 4, display: "flex", flexDirection: "row", alignItems: "stretch", p: 0, borderRadius: "12px" }}>
             <CardMedia
@@ -27,7 +46,15 @@ const ContactCard = ({ icon, title, description }) => {
                 }}
             >
                 <Typography sx={{ fontWeight: 700, fontSize: "24px" }}>{title}</Typography>
-                <Typography sx={{ color: "text.secondary" }}>{description}</Typography>
+                {title.toLowerCase() === "phone" ?
+                    (
+                        <Tooltip title={copy ? `${description}` : "Click to copy"} arrow placement="top">
+                            <Typography onClick={handleCopy} sx={{ color: "text.secondary", cursor: "pointer", "&:hover": { color: "primary.main", textDecoration: "underline" }, }}>{description}</Typography>
+                        </Tooltip>
+                    ) : (
+                        <Typography sx={{ color: "text.secondary" }}>{description}</Typography>
+                    )
+                }
             </CardContent>
         </Card>
     )
