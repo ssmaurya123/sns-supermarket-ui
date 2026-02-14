@@ -15,8 +15,8 @@ const MessageForm = () => {
 
 
     return (
-        <Box sx={{ display: "flex", justifyContent: "center", height: "100vh" }}>
-            <Paper sx={{ width: "80%", height: "70%", bgcolor: "background.paper", mt: 2, p: 2 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", width:"500px"}}>
+            <Paper sx={{ bgcolor: "background.paper", m: 2, p: 2 }}>
                 <Typography variant="h6">Send us a message</Typography>
                 <Typography variant="body1" sx={{ color: "text.secondary", mb: 4 }}>Fill out the form below and we'll get back to you as soon as possible</Typography>
 
